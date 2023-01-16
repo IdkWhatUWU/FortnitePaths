@@ -159,10 +159,7 @@ public class Exporter
         }
         catch (Exception e)
         {
-#if DEBUG
-            if (e.ToString().StartsWith("System.IO.IOException:")) return false; // let's remove this useless exception
             Console.WriteLine(e);
-#endif
             Console.WriteLine($"\nError while saving texture for {texture.Name}");
             return false;
         }
@@ -181,9 +178,7 @@ public class Exporter
         }
         catch (Exception e)
         {
-#if DEBUG
             Console.WriteLine(e);
-#endif
             Console.WriteLine($"\nError while saving texture for {filePath.Split('/').Last()}");
             return false;
         }
